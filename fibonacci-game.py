@@ -1,3 +1,4 @@
+# pyright: strict
 import argparse
 import string
 import random
@@ -151,7 +152,8 @@ def interact(n: int):
     graph = generate(n)
     strategy = strategize(graph)
     state: State = (n,)
-    if strategy[state]:
+
+    if not strategy[state]:
         print("heads up, you're gonna lose!")
         print()
 
